@@ -1,0 +1,14 @@
+.header {
+    padding: 18px 0;
+    background-color: #ffffff;
+}
+
+.header-container {
+    max-width: 1440px;
+    padding: 0 40px;
+    margin: auto;
+
+    @media (max-width: 375px) {
+        padding: 0 24px;
+    }
+}
