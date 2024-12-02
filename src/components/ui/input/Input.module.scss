@@ -1,0 +1,19 @@
+@use "@/styles/variables" as vars;
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #9AACB5;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #ffffff;
+
+  &::placeholder {
+    color: vars.$color-gray;
+  }
+
+  &:focus {
+    outline: 1px solid vars.$color-accent;
+    border-color: vars.$color-accent;
+  }
+}

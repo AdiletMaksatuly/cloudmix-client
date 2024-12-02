@@ -1,14 +1,12 @@
 'use client';
 
 import useAuth from '@/auth/hooks/useAuth.hook';
-import Link from 'next/link';
-import APP_ROUTES from '@/consts/routes.const';
-import Button from '@/components/ui/button/Button';
-import Input from '@/components/ui/input/Input';
 import FormField from '@/components/ui/form-field/FormField';
-import styles from './Login.module.scss';
+import Input from '@/components/ui/input/Input';
+import Button from '@/components/ui/button/Button';
+import styles from './Register.module.scss';
 
-function Login() {
+function Register() {
   const { login } = useAuth();
 
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -23,9 +21,20 @@ function Login() {
   };
 
   return (
-    <section className={styles.login}>
-      <h1 className={styles.title}>Login</h1>
+    <section className={styles.register}>
+      <h1 className={styles.title}>Register</h1>
       <form className={styles.form} onSubmit={submit}>
+        <FormField label="Username" controlId="username">
+          <Input
+            className={styles.input}
+            id="username"
+            type="Username"
+            name="Username"
+            placeholder="Enter your username"
+            required
+          />
+        </FormField>
+
         <FormField label="Email" controlId="email">
           <Input
             className={styles.input}
@@ -48,16 +57,21 @@ function Login() {
           />
         </FormField>
 
-        <Button type="submit">Log in</Button>
-      </form>
+        <FormField label="Confirm password" controlId="confirmPassword">
+          <Input
+            type="password"
+            id="confirmPassword"
+            className={styles.input}
+            name="confirmPassword"
+            placeholder="Confirm your password"
+            required
+          />
+        </FormField>
 
-      <span className={styles['register-link']}>
-        Don`&apos;t have an account?
-        {' '}
-        <Link href={APP_ROUTES.Register}>Register here</Link>
-      </span>
+        <Button type="submit">Register</Button>
+      </form>
     </section>
   );
 }
 
-export default Login;
+export default Register;

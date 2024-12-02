@@ -1,0 +1,25 @@
+@use "@/styles/variables" as vars;
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+
+  &--filled {
+    background-color: vars.$color-accent;
+    color: #ffffff;
+  }
+
+  &--stroked {
+    background-color: #ffffff;
+    border: 1px solid vars.$color-accent;
+    color: vars.$color-accent;
+  }
+
+  &:focus {
+    outline: 1px solid #000;
+  }
+}

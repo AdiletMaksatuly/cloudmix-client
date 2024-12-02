@@ -10,7 +10,7 @@ export default function Logout() {
 
   return (
     <div>
-      <span className={styles.username}>{currentUser?.name}</span>
+      <span className={styles.username}>{currentUser?.username}</span>
       <button type="button" onClick={logout} className={styles['logout-btn']}>
         Logout
       </button>

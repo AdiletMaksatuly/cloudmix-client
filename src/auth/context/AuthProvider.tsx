@@ -7,11 +7,11 @@ import { usePathname, useRouter } from 'next/navigation';
 import APP_ROUTES from '@/consts/routes.const';
 import { AuthContext } from '@/auth/context/auth.context';
 import { CurrentUser } from '@/auth/models/current-user.model';
-import { LoginUser } from '@/auth/models/login-user.model';
+import { LoginUser, RegisterUser } from '@/auth/models/auth.model';
 
 const mockUser: CurrentUser = {
   id: 1,
-  name: 'Name',
+  username: 'Name',
   email: 'email@gmail.com',
 };
 
@@ -26,8 +26,16 @@ export default function AuthProvider({ children }: PropsWithChildren<unknown>) {
   const login = (loginUser: LoginUser) => {
     setCurrentUser({
       id: 1,
-      name: 'Name',
+      username: 'Name',
       email: loginUser.email,
+    });
+  };
+
+  const register = (user: RegisterUser) => {
+    setCurrentUser({
+      id: 1,
+      username: user.username,
+      email: user.email,
     });
   };
 
@@ -41,8 +49,9 @@ export default function AuthProvider({ children }: PropsWithChildren<unknown>) {
       isLoggedIn,
       login,
       logout,
+      register,
     }),
-    [currentUser, isLoggedIn, login, logout],
+    [currentUser, isLoggedIn, login, logout, register],
   );
 
   useEffect(() => {

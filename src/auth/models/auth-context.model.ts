@@ -5,5 +5,6 @@ export interface AuthContextType {
   currentUser: CurrentUser | null;
   isLoggedIn: boolean;
   login: (loginUser: LoginUser) => void;
+  register: (loginUser: LoginUser) => void;
   logout: () => void;
 }

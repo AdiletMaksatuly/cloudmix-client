@@ -1,3 +1,5 @@
+import Register from '@/auth/pages/register/Register';
+
 export default function RegisterPage() {
-  return <div>Register</div>;
+  return <Register />;
 }

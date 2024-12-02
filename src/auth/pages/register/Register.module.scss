@@ -1,6 +1,6 @@
 @use "@/styles/variables" as vars;
 
-.login {
+.register {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -23,20 +23,4 @@
 
 .input {
   margin-top: 8px;
-}
-
-.register-link {
-    margin-top: 16px;
-    text-align: center;
-    font-size: 14px;
-    text-decoration: none;
-
-    a {
-      color: vars.$color-accent;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
 }
