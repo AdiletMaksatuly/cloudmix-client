@@ -2,6 +2,7 @@ import Button from '@/components/ui/button/Button';
 import Image from 'next/image';
 import { mockChats } from '@/chat/mocks/chats.mock';
 import Messages from '@/chat/components/messages/Messages';
+import Link from 'next/link';
 import styles from './Chat.module.scss';
 
 export interface ChatProps {
@@ -21,10 +22,20 @@ export default function Chat({ chatId }: ChatProps) {
   return (
     <section className={styles.chat}>
       <header className={styles['chat-header']}>
-        <span className={styles['chat-header-contact-name']}>
-          {mockChat.participants[0].username}
-        </span>
-        <span className={styles['chat-header-contact-status']}>Online</span>
+        <Link href="../" className={styles['chat-header-back-btn']}>
+          <Image
+            src="/assets/icons/icon-chevron-left.svg"
+            alt="Go back"
+            width={24}
+            height={24}
+          />
+        </Link>
+        <div className={styles['chat-header-info']}>
+          <span className={styles['chat-header-contact-name']}>
+            {mockChat.participants[0].username}
+          </span>
+          <span className={styles['chat-header-contact-status']}>Online</span>
+        </div>
       </header>
 
       <Messages me={me} contactUser={contactUser} />

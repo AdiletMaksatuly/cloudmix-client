@@ -1,13 +1,39 @@
-import Chats from '@/chat/components/chats/Chats';
+'use client';
+
 import { PropsWithChildren } from 'react';
+import clsx from 'clsx';
+import { useParams } from 'next/navigation';
 import styles from './ChatsLayout.module.scss';
 
-export default function ChatsLayout({ children }: PropsWithChildren<unknown>) {
+export interface ChatsLayoutParams {
+  Chats: React.ReactNode;
+}
+
+export default function ChatsLayout({
+  children,
+  Chats,
+}: PropsWithChildren<ChatsLayoutParams>) {
+  const params = useParams();
+
+  const selectedChatId = params?.id;
+
   return (
     <section className={styles.chats}>
-      <Chats className={styles['chats-list']} />
+      <div
+        className={clsx(styles['chats-list'], {
+          [styles['chats-list--hidden']]: !!selectedChatId,
+        })}
+      >
+        {Chats}
+      </div>
 
-      <section className={styles.chat}>{children}</section>
+      <section
+        className={clsx(styles.chat, {
+          [styles['chat--hidden']]: !selectedChatId,
+        })}
+      >
+        {children}
+      </section>
     </section>
   );
 }

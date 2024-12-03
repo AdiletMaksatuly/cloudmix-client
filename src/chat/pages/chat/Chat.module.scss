@@ -7,6 +7,9 @@
 }
 
 .chat-header {
+  display: flex;
+  align-items: self-start;
+
   padding: 17px 40px;
   background-color: #ffffff;
   border-bottom: 1px solid vars.$color-gray-2;
@@ -14,7 +17,27 @@
   @media (max-width: vars.$screen-tablet-max-width) {
     padding: 10px 40px;
   }
+
+  @media (max-width: 768px) {
+    padding: 10px 24px;
+  }
 }
+
+.chat-header-back-btn {
+  display: none;
+  width: auto !important;
+  padding: 0 !important;
+  border-radius: initial !important;
+
+  @media (max-width: 768px) {
+    display: inline-block;
+    margin-right: 8px;
+    position: relative;
+    top: 3px;
+  }
+}
+
+.chat-header-info {}
 
 .chat-header-contact-name {
   font-size: 18px;

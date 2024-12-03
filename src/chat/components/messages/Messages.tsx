@@ -72,6 +72,7 @@ export default function Messages({ me, contactUser }: MessagesProps) {
   }, [mockMessages]);
 
   return (
+    // TODO: virtual scroll here
     <ul ref={chatWindowRef} className={styles['chat-messages']}>
       {mockMessages.map((message) => (
         <li

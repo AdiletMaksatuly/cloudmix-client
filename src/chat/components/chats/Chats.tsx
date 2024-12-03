@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import styles from './Chats.module.scss';
 
 export interface ChatsProps {
-  className: string;
+  className?: string;
 }
 
 const formatTime = (timestamp: number) => dayjs(timestamp).format('hh:mm');

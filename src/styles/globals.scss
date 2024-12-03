@@ -40,6 +40,10 @@ h1, h2 {
   line-height: 28px;
 }
 
+img, svg {
+  vertical-align: middle;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
