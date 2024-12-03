@@ -1,5 +1,5 @@
 const APP_ROUTES = {
-  Chat: '/chat',
+  Chats: '/chats',
   Login: '/login',
   Register: '/register',
 } as const;

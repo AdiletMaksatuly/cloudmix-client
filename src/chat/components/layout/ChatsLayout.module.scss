@@ -1,0 +1,31 @@
+@use 'sass:math' as math;
+@use "@/styles/variables" as vars;
+
+.chats {
+  display: flex;
+  height: 100%;
+}
+
+.chats-list {
+  flex-basis: math.div(510px, vars.$screen-max-width) * 100%;
+  flex-shrink: 0;
+
+  @media (max-width: vars.$screen-tablet-max-width) {
+    flex-basis: 375px;
+    max-width: 375px;
+  }
+
+  @media (max-width: 768px) {
+    flex-basis: 100%;
+    max-width: 100%;
+    min-width: 320px;
+  }
+}
+
+.chat {
+  flex-grow: 1;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

@@ -1,7 +1,11 @@
+@use "@/styles/variables" as vars;
+
 .layout {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  max-width: vars.$screen-max-width;
+  margin: auto;
 }
 
 .content {

@@ -3,13 +3,13 @@
 .input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #9AACB5;
+  border: 1px solid vars.$color-gray-2;
   border-radius: 10px;
   font-size: 16px;
   background-color: #ffffff;
 
   &::placeholder {
-    color: vars.$color-gray;
+    color: vars.$color-gray-1;
   }
 
   &:focus {

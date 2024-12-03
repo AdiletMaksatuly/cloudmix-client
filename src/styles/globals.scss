@@ -10,6 +10,7 @@ body {
 }
 
 body {
+  margin: 0;
   color: vars.$color-primary;
 }
 
@@ -33,7 +34,7 @@ ul {
   margin: 0;
 }
 
-h1 {
+h1, h2 {
   font-size: 24px;
   font-weight: 600;
   line-height: 28px;

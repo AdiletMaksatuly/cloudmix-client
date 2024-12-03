@@ -1,14 +1,17 @@
+@use "@/styles/variables" as vars;
+
 .header {
     padding: 18px 0;
     background-color: #ffffff;
+    border-bottom: 1px solid vars.$color-gray-2;
 }
 
 .header-container {
-    max-width: 1440px;
+    max-width: vars.$screen-max-width;
     padding: 0 40px;
     margin: auto;
 
-    @media (max-width: 375px) {
+    @media (max-width: vars.$screen-min-width) {
         padding: 0 24px;
     }
 }

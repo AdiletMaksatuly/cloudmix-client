@@ -9,7 +9,7 @@ export default function AppHeader() {
     <header className={styles.header}>
       <div className={styles['header-container']}>
         <nav className={styles.menu}>
-          <Link href={APP_ROUTES.Chat} className={styles['logo-link']}>
+          <Link href={APP_ROUTES.Chats} className={styles['logo-link']}>
             <Image
               src="/assets/logo.svg"
               alt="Cloudmix logo - Home"

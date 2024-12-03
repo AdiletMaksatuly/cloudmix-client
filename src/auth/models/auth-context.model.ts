@@ -1,8 +1,8 @@
-import { CurrentUser } from '@/auth/models/current-user.model';
-import { LoginUser } from '@/auth/models/login-user.model';
+import { User } from '@/auth/models/user.model';
+import { LoginUser } from '@/auth/models/auth.model';
 
 export interface AuthContextType {
-  currentUser: CurrentUser | null;
+  currentUser: User | null;
   isLoggedIn: boolean;
   login: (loginUser: LoginUser) => void;
   register: (loginUser: LoginUser) => void;

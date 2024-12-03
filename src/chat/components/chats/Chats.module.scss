@@ -1,0 +1,97 @@
+@use "@/styles/variables" as vars;
+
+.chats {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid vars.$color-gray-2;
+}
+
+.header {
+  padding: 32px 32px 30px 40px;
+  border-bottom: 1px solid vars.$color-gray-2;
+  background-color: #FBFBFB;
+
+  @media (max-width: vars.$screen-tablet-max-width) {
+    padding: 24px;
+  }
+}
+
+.title {
+  margin: 0;
+}
+
+.chats-list {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.chat {
+  border-bottom: 1px solid vars.$color-gray-2;
+
+}
+
+.chat-link {
+  padding: 18px 32px 18px 40px;
+  display: block;
+
+  &:hover {
+    background-color: #f2f1f4;
+  }
+
+  @media (max-width: vars.$screen-tablet-max-width) {
+    padding: 18px 24px;
+  }
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-sender {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+  flex-grow: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 24px - 10px);
+  overflow: hidden;
+}
+
+.chat-unread-messages {
+  flex-shrink: 0;
+  flex-basis: 24px;
+  display: grid;
+  place-items: center;
+  height: 24px;
+  padding: 4px;
+  border-radius: 20px;
+  background-color: vars.$color-accent;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.chat-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-text {
+  font-size: 16px;
+  line-height: 28px;
+  color: #8b8594;
+  flex-grow: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.chat-last-message-time {
+  font-size: 14px;
+  line-height: 21px;
+  color: #756c7f;
+}

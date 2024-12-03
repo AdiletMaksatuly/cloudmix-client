@@ -6,10 +6,10 @@ import {
 import { usePathname, useRouter } from 'next/navigation';
 import APP_ROUTES from '@/consts/routes.const';
 import { AuthContext } from '@/auth/context/auth.context';
-import { CurrentUser } from '@/auth/models/current-user.model';
+import { User } from '@/auth/models/user.model';
 import { LoginUser, RegisterUser } from '@/auth/models/auth.model';
 
-const mockUser: CurrentUser = {
+const mockUser: User = {
   id: 1,
   username: 'Name',
   email: 'email@gmail.com',
@@ -19,7 +19,7 @@ export default function AuthProvider({ children }: PropsWithChildren<unknown>) {
   const router = useRouter();
   const pathname = usePathname();
 
-  const [currentUser, setCurrentUser] = useState<CurrentUser | null>(mockUser);
+  const [currentUser, setCurrentUser] = useState<User | null>(mockUser);
 
   const isLoggedIn = !!currentUser;
 
@@ -55,12 +55,24 @@ export default function AuthProvider({ children }: PropsWithChildren<unknown>) {
   );
 
   useEffect(() => {
-    if (isLoggedIn) {
-      router.push(APP_ROUTES.Chat);
+    if (
+      isLoggedIn
+      && (pathname === APP_ROUTES.Login || pathname === APP_ROUTES.Register)
+    ) {
+      router.push(APP_ROUTES.Chats);
       return;
     }
 
-    if (pathname !== APP_ROUTES.Login && pathname !== APP_ROUTES.Register) {
+    if (isLoggedIn && pathname === '/') {
+      router.push(APP_ROUTES.Chats);
+      return;
+    }
+
+    if (
+      !isLoggedIn
+      && pathname !== APP_ROUTES.Login
+      && pathname !== APP_ROUTES.Register
+    ) {
       router.push(APP_ROUTES.Login);
     }
   }, [isLoggedIn, pathname, router]);
