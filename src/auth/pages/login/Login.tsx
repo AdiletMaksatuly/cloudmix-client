@@ -48,7 +48,9 @@ function Login() {
           />
         </FormField>
 
-        <Button type="submit">Log in</Button>
+        <Button variant="filled" type="submit">
+          Log in
+        </Button>
       </form>
 
       <span className={styles['register-link']}>

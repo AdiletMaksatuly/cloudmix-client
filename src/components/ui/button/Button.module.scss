@@ -8,6 +8,14 @@
   font-size: 16px;
   font-weight: 500;
 
+  &--default {
+    background-color: #ffffff;
+
+    &:focus {
+      outline: 2px solid #000;
+    }
+  }
+
   &--filled {
     background-color: vars.$color-accent;
     color: #ffffff;
@@ -19,7 +27,9 @@
     color: vars.$color-accent;
   }
 
-  &:focus {
-    outline: 1px solid #000;
+  &--filled, &--stroked {
+    &:focus {
+      outline: 1px solid #000;
+    }
   }
 }

@@ -1,7 +1,8 @@
 import React, { PropsWithChildren } from 'react';
+import clsx from 'clsx';
 import styles from './Button.module.scss';
 
-type ButtonVariant = 'filled' | 'stroked';
+type ButtonVariant = 'default' | 'filled' | 'stroked';
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -10,14 +11,12 @@ export interface ButtonProps
 
 function Button({
   children,
-  variant = 'filled',
+  variant = 'default',
   className,
   type = 'button',
   ...props
 }: PropsWithChildren<ButtonProps>) {
-  const cssClasses = [styles.btn, styles[`btn--${variant}`], className]
-    .filter(Boolean)
-    .join(' ');
+  const cssClasses = clsx(styles.btn, styles[`btn--${variant}`], className);
 
   return (
     <button {...props} type={type} className={cssClasses}>
@@ -25,11 +24,5 @@ function Button({
     </button>
   );
 }
-
-const defaultProps: ButtonProps = {
-  variant: 'filled',
-};
-
-Button.defaultProps = defaultProps;
 
 export default Button;

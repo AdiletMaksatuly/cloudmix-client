@@ -35,6 +35,7 @@
         "react/jsx-props-no-spreading": [2, {
             "html": "ignore"
         }],
-        "react/button-has-type": "off"
+        "react/button-has-type": "off",
+        "react/require-default-props": "off"
     }
 }

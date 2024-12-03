@@ -1,7 +1,5 @@
+import ChatsPlaceholder from '@/chat/pages/chats-placeholder/ChatsPlaceholder';
+
 export default function ChatsPage() {
-  return (
-    <section>
-      <span>Click to any chat on the left</span>
-    </section>
-  );
+  return <ChatsPlaceholder />;
 }

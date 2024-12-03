@@ -68,7 +68,9 @@ function Register() {
           />
         </FormField>
 
-        <Button type="submit">Register</Button>
+        <Button variant="filled" type="submit">
+          Register
+        </Button>
       </form>
     </section>
   );

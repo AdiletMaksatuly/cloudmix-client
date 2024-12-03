@@ -3,11 +3,11 @@ import { User } from '@/auth/models/user.model';
 export interface ChatMessage {
   id: number;
   text: string;
-  senderId: number;
+  sender: User;
   timestamp: number;
 }
 
-export interface Chat {
+export interface ChatModel {
   id: number;
   participants: User[];
   unreadMessages: number;

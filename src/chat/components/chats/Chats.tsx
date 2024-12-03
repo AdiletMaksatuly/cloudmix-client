@@ -1,8 +1,8 @@
-import { Chat } from '@/chat/models/chat.model';
-import { User } from '@/auth/models/user.model';
 import dayjs from 'dayjs';
 import Link from 'next/link';
 import APP_ROUTES from '@/consts/routes.const';
+import { mockChats, unreadMessagesCount } from '@/chat/mocks/chats.mock';
+import clsx from 'clsx';
 import styles from './Chats.module.scss';
 
 export interface ChatsProps {
@@ -11,60 +11,9 @@ export interface ChatsProps {
 
 const formatTime = (timestamp: number) => dayjs(timestamp).format('hh:mm');
 
-const unreadMessagesCount = 3;
-
-const mockUsers: User[] = [
-  { id: 1, username: 'Aslan', email: 'alice@example.com' },
-  { id: 2, username: 'Moana', email: 'bob@example.com' },
-  { id: 3, username: 'Dragon Love', email: 'charlie@example.com' },
-  {
-    id: 4,
-    username: 'Me',
-    email: 'me@email.com',
-  },
-];
-
-const mockChats: Chat[] = [
-  {
-    id: 1,
-    participants: [mockUsers[0], mockUsers[4]],
-    unreadMessages: 0,
-    lastMessage: {
-      id: 1,
-      text: 'Hi, how is going now?',
-      senderId: mockUsers[0].id,
-      timestamp: Date.now() - 60000,
-    },
-  },
-  {
-    id: 2,
-    participants: [mockUsers[1], mockUsers[4]],
-    unreadMessages: 1,
-    lastMessage: {
-      id: 2,
-      text: 'Yo bro I got some info for you',
-      senderId: mockUsers[1].id,
-      timestamp: Date.now() - 120000,
-    },
-  },
-  {
-    id: 3,
-    participants: [mockUsers[2], mockUsers[4]],
-    unreadMessages: 0,
-    lastMessage: {
-      id: 3,
-      text: 'Send nudes',
-      senderId: mockUsers[2].id,
-      timestamp: Date.now() - 180000,
-    },
-  },
-];
-
 export default function Chats({ className }: ChatsProps) {
-  const chatsCssClasses = [className, styles.chats].filter(Boolean).join(' ');
-
   return (
-    <section className={chatsCssClasses}>
+    <section className={clsx(className, styles.chats)}>
       <header className={styles.header}>
         <h2 className={styles.title}>
           Messages(

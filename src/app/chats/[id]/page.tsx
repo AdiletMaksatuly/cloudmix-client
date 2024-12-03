@@ -1,3 +1,5 @@
+import Chat from '@/chat/pages/chat/Chat';
+
 interface ProductDetailsPageParam {
   id: number;
 }
@@ -9,10 +11,5 @@ interface ChatPageProps {
 export default function ChatPage({ params }: ChatPageProps) {
   const { id } = params;
 
-  return (
-    <section>
-      Chat
-      {id}
-    </section>
-  );
+  return <Chat chatId={id} />;
 }
