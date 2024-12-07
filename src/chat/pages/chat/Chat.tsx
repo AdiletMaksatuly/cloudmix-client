@@ -1,4 +1,4 @@
-import Button from '@/components/ui/button/Button';
+import Button from '@/shared/components/ui/button/Button';
 import Image from 'next/image';
 import { mockChats } from '@/chat/mocks/chats.mock';
 import Messages from '@/chat/components/messages/Messages';

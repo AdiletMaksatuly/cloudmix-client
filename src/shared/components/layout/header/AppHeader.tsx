@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import APP_ROUTES from '@/consts/routes.const';
-import Logout from '@/components/layout/logout/Logout';
+import APP_ROUTES from '@/shared/consts/routes.const';
+import Logout from '@/shared/components/layout/logout/Logout';
 import styles from './AppHeader.module.scss';
 
-export default function AppHeader() {
+export default async function AppHeader() {
   return (
     <header className={styles.header}>
       <div className={styles['header-container']}>
@@ -19,7 +19,10 @@ export default function AppHeader() {
             />
           </Link>
 
-          <Logout />
+            <div>
+              <span className={styles.username}>Name</span>
+              <Logout />
+            </div>
         </nav>
       </div>
     </header>

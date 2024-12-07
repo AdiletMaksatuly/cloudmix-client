@@ -17,49 +17,49 @@ export default function Messages({ me, contactUser }: MessagesProps) {
       id: 1,
       text: 'Hey, how are you?',
       sender: contactUser,
-      timestamp: Date.now() - 60000, // 1 minute ago
+      timestamp: Date.now() - 60000,
     },
     {
       id: 2,
       text: "I'm good, thanks! How about you?",
       sender: me,
-      timestamp: Date.now() - 55000, // 55 seconds ago
+      timestamp: Date.now() - 55000,
     },
     {
       id: 3,
       text: 'Doing well. Have you seen the latest updates?',
       sender: contactUser,
-      timestamp: Date.now() - 30000, // 30 seconds ago
+      timestamp: Date.now() - 30000,
     },
     {
       id: 4,
       text: 'Not yet. Can you send me a link?',
       sender: me,
-      timestamp: Date.now() - 10000, // 10 seconds ago
+      timestamp: Date.now() - 10000,
     },
     {
       id: 5,
       text: 'Hey, how are you?',
       sender: contactUser,
-      timestamp: Date.now() - 60000, // 1 minute ago
+      timestamp: Date.now() - 60000,
     },
     {
       id: 6,
       text: "I'm good, thanks! How about you?",
       sender: me,
-      timestamp: Date.now() - 55000, // 55 seconds ago
+      timestamp: Date.now() - 55000,
     },
     {
       id: 7,
       text: 'Doing well. Have you seen the latest updates?',
       sender: contactUser,
-      timestamp: Date.now() - 30000, // 30 seconds ago
+      timestamp: Date.now() - 30000,
     },
     {
       id: 8,
       text: 'Not yet. Can you send me a link?',
       sender: me,
-      timestamp: Date.now() - 10000, // 10 seconds ago
+      timestamp: Date.now() - 10000,
     },
   ];
 

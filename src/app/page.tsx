@@ -1,3 +1,7 @@
+import { redirect } from 'next/navigation';
+import APP_ROUTES from '@/shared/consts/routes.const';
+
+
 export default function HomePage() {
-  return null;
+  redirect(APP_ROUTES.Login);
 }

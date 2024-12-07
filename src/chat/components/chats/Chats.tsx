@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 import Link from 'next/link';
-import APP_ROUTES from '@/consts/routes.const';
+import APP_ROUTES from '@/shared/consts/routes.const';
 import { mockChats, unreadMessagesCount } from '@/chat/mocks/chats.mock';
 import clsx from 'clsx';
 import styles from './Chats.module.scss';
